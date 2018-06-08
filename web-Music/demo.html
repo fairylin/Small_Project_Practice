@@ -1,0 +1,126 @@
+<!-- demo.html weilinlinxiugai guo -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music</title>
+	<style type="text/css">
+		ul {
+			list-style: none; /*去圆点*/
+			margin: 0;
+			padding: 0;
+			
+		}
+		#song_box {
+			width: 505px;
+			height: auto;
+			margin: 10px auto;
+			/*background-color: #0cf;*/
+		}
+		.row-item-body {
+			width: 320px;
+			height: 41px;
+			padding: 0 110px 0 72px;
+			border-bottom: 1px solid grey;
+		}
+		.header {
+			color: #999;
+		}
+		.row-item-col {
+			width: 104px;
+			float: left;
+			font-size: 14px;
+			line-height: 41px; /*行高*/
+			overflow: hidden; /*超出隐藏*/
+			white-space: nowrap;/*禁止换行*/
+			text-overflow: ellipsis;/*超出部分使用省略号代替*/
+			text-indent: 10px;/*首行缩进*/
+		}
+		.sort {
+			position: absolute;
+			left: 27px;
+			top: 10px;
+		}
+		li {
+			position: relative;
+			left: 0px;
+			top: 10px;
+		}
+	</style>
+	<!-- 默认情况下，当浮动时，div盒子中的宽度可以实现自适应 -->
+</head>
+<body>
+	<div id="song_box">
+		<audio class="song"></audio>
+		<div class="song-title">
+			<div class="header row-item-body">
+				<div class="row-item-col">歌手</div>
+				<div class="row-item-col">演唱者</div>
+				<div class="row-item-col">专辑</div>
+			</div>
+		</div>
+		<div class="song-list">
+			<ul>
+				<li data-json="mp3/好心分手-王力宏.mp3">
+					<div class="sort">1</div>
+					<div class="row-item-body">
+						<div class="row-item-col">好心分手</div>
+						<div class="row-item-col">王力宏</div>
+						<div class="row-item-col">专辑</div>
+					</div>
+				</li>
+				<li data-json="mp3/花田错.mp3">
+					<div class="sort">2</div>
+					<div class="row-item-body">
+						<div class="row-item-col">花田错</div>
+						<div class="row-item-col">王力宏</div>
+						<div class="row-item-col">专辑</div>
+					</div>
+				</li>
+				<li data-json="mp3/落叶归根-王力宏.mp3">
+					<div class="sort">3</div>
+					<div class="row-item-body">
+						<div class="row-item-col">落叶归根</div>
+						<div class="row-item-col">王力宏</div>
+						<div class="row-item-col">专辑</div>
+					</div>
+				</li>
+				<li data-json="mp3/飘向北方-王力宏.mp3">
+					<div class="sort">4</div>
+					<div class="row-item-body">
+						<div class="row-item-col">飘向北方</div>
+						<div class="row-item-col">王力宏</div>
+						<div class="row-item-col">专辑</div>
+					</div>
+				</li>
+				<li data-json="mp3/唯一-王力宏.mp3">
+					<div class="sort">5</div>
+					<div class="row-item-body">
+						<div class="row-item-col">唯一</div>
+						<div class="row-item-col">王力宏</div>
+						<div class="row-item-col">专辑</div>
+					</div>
+				</li>
+				<li data-json="mp3/你是我心内的一首歌-王力宏.mp3">
+					<div class="sort">6</div>
+					<div class="row-item-body">
+						<div class="row-item-col">你是我心内的一首歌</div>
+						<div class="row-item-col">王力宏</div>
+						<div class="row-item-col">专辑</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script>
+		jQuery("li").click(function() { /*使用jQuery和$达到的目的是相同的*/
+			var src = $(this).attr("data-json");
+			// alert(src);
+			var song = document.getElementsByClassName("song")['0'];
+			// alert(song);
+			song.src = src;
+			song.play();
+		})
+	</script>
+</body>
+</html>
