@@ -5,3 +5,5 @@ Git tracks changes.
 Git tracks changes os files.
 
 Creating a new branch is quick.
+
+Creating a new branch is quick and simple.
